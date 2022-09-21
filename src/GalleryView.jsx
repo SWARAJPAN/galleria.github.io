@@ -37,14 +37,14 @@ export default function App() {
       .get(API_URL + `&page=${pageNum}`)
       .then((res) => res)
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setMovies(data.data.results);
       });
   }, [pageNum]);
   return (
     <div className='container'>
       <div>
-        <button className='page-btn mb-4' onClick={pagePrev}>
+        <button className='page-btn' onClick={pagePrev}>
           <span>previous</span>
         </button>
         <button className='page-btn' onClick={pageNext}>

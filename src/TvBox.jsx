@@ -12,7 +12,7 @@ const TvBox = ({
   overview,
 }) => {
   return (
-    <NavLink to={`/details/${id}`}>
+    <NavLink to={`/detailtv/${id}`}>
       <div className='card '>
         {/* <h1 className='title'>{name}</h1> */}
         {/* <p>Released on: {release_date}</p> */}

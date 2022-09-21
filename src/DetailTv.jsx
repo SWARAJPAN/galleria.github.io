@@ -13,7 +13,7 @@ function DetailPage() {
   const API_IMG = "https://image.tmdb.org/t/p/w500/";
 
   const API_URL =
-    "https://api.themoviedb.org/3/movie/popular?api_key=23c20811e74b5ca13481b1fc83ef5376";
+    "https://api.themoviedb.org/3/tv/popular?api_key=23c20811e74b5ca13481b1fc83ef5376";
   const [movies, setMovies] = useState([0]);
 
   const params = useParams();
@@ -25,7 +25,7 @@ function DetailPage() {
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${params.id}?api_key=23c20811e74b5ca13481b1fc83ef5376`
+        `https://api.themoviedb.org/3/tv/${params.id}?api_key=23c20811e74b5ca13481b1fc83ef5376`
       )
 
       .then((data) => {
@@ -52,7 +52,7 @@ function DetailPage() {
 
     console.log(array[index - 1]);
 
-    navigate(`/details/${array[index - 1]}`);
+    navigate(`/detailtv/${array[index - 1]}`);
 
     console.log(index);
   };
@@ -65,7 +65,7 @@ function DetailPage() {
 
     console.log(array[index + 1]);
 
-    navigate(`/details/${array[index + 1]}`);
+    navigate(`/detailtv/${array[index + 1]}`);
 
     console.log(index);
   };

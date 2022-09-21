@@ -12,7 +12,7 @@ const Home = () => {
             <div className='home-bar'>
               <h2>MOVIES</h2>
               <div className='logo'>
-                <img src={img} height={90} />
+                <img src={img} height={75} />
               </div>
               <ul className='navbar mt-3'>
                 <NavLink to='/'>

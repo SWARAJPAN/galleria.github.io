@@ -7,3 +7,11 @@ function SearchFilter() {
 }
 
 export default SearchFilter;
+
+// .filter((item) => {
+//   if (item.title == data) {
+//     return item;
+//   } else {
+//     return item;
+//   }
+// })
