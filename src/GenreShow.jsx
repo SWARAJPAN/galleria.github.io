@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import { ConstructionOutlined } from "@mui/icons-material";
 // import MovieBox from "./MovieBox";
 
 // import { Button } from "@mui/material";
@@ -12,9 +13,10 @@ const API_GENRE =
 const API_IMG = "https://image.tmdb.org/t/p/w500/";
 
 function Movie() {
-  const [mdata, setData] = useState("");
   const [movies, setMovies] = useState([]);
   const [pageNum, setPageNum] = useState(1);
+  const [mgenre, setMgenre] = useState();
+  const [mdata, setData] = useState("");
 
   function pageNext() {
     console.log("next");
@@ -24,22 +26,34 @@ function Movie() {
   function pagePrev() {
     setPageNum((prev) => prev - 1);
   }
+  const setSelcted = (number) => {
+    setMgenre(number);
+    console.log("setselcted clicked");
+  };
 
   const handlGenre = (e) => {
-    // console.log(e.target.value);
+    // console.log("hello");
+    console.log(e.target.value);
     setData(e.target.value);
+
     // console.log(parseInt(mdata));
   };
-  const tages = document.getElementsByClassName("tags");
-  console.log(tages.innerHTML);
-  //   const clicked= false;
-  //   const HandleActive = ()=>{
 
-  //     if(clicked==false){
-  //       tages.classList.add('')
-  //     }
+  const hello = () => {
+    console.log("hello1");
+  };
+  const hello2 = () => {
+    console.log("hello2");
+  };
 
-  //   }
+  const handleCLick = (e, number) => {
+    handlGenre(e);
+    // console.log(e.target.value);
+    console.log(number);
+    setSelcted(number);
+
+    hello2();
+  };
 
   useEffect(() => {
     console.log(pageNum);
@@ -54,8 +68,8 @@ function Movie() {
         // ${mdata ? `genre=${mdata}` : ""}`
       });
   }, [mdata, pageNum]);
-  console.log(movies);
-  console.log(mdata);
+  // console.log(movies);
+  // console.log(mdata);
 
   //   genre_ids[0];
   //   console.log(movies.genre_ids[0]);
@@ -71,22 +85,73 @@ function Movie() {
         </button>
       </div>
       <div className='genre-tags'>
-        <button className='tags' value='35' onClick={handlGenre}>
+        <button
+          className={mgenre === 1 ? "selectedTag" : "tags"}
+          // className='tags'
+          value='35'
+          // onClick={(e) => {
+          //   handleCLick(e, 1);
+          // }}
+
+          onClick={(e) => {
+            handlGenre(e);
+            setSelcted(1);
+          }}
+        >
           Comedy
         </button>
-        <button className='tags' value='53' onClick={handlGenre}>
+        <button
+          className={mgenre === 2 ? "selectedTag" : "tags"}
+          value='53'
+          // onClick={(e) => {
+          //   handleCLick(e, 2);
+          // }}
+
+          onClick={(e) => {
+            handlGenre(e);
+            setSelcted(2);
+          }}
+        >
           Action
         </button>
-        <button className='tags' value='14' onClick={handlGenre}>
+        <button
+          className={mgenre === 3 ? "selectedTag" : "tags"}
+          value='14'
+          onClick={(e) => {
+            handlGenre(e);
+            setSelcted(3);
+          }}
+        >
           Fantasy
         </button>
-        <button className='tags' value='27' onClick={handlGenre}>
+        <button
+          className={mgenre === 4 ? "selectedTag" : "tags"}
+          value='27'
+          onClick={(e) => {
+            handlGenre(e);
+            setSelcted(4);
+          }}
+        >
           Horror
         </button>
-        <button className='tags' value='36' onClick={handlGenre}>
+        <button
+          className={mgenre === 5 ? "selectedTag" : "tags"}
+          value='36'
+          onClick={(e) => {
+            handlGenre(e);
+            setSelcted(5);
+          }}
+        >
           History
         </button>
-        <button className='tags' value='10402' onClick={handlGenre}>
+        <button
+          className={mgenre === 6 ? "selectedTag" : "tags"}
+          value='10402'
+          onClick={(e) => {
+            handlGenre(e);
+            setSelcted(6);
+          }}
+        >
           Music
         </button>
       </div>

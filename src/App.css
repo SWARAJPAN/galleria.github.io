@@ -95,40 +95,6 @@ body {
   color: #ee5729;
 }
 
-.detail-btns {
-  position: fixed;
-  margin-top: 10%;
-  margin-left: 10%;
-}
-.detail-page-btn {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: center;
-  display: inline-block;
-  border-radius: 20rem;
-  background-color: transparent;
-  border-style: solid;
-  border-color: #e96021;
-  color: #f4511e;
-  text-align: center;
-  width: 8rem;
-  padding: 10px;
-
-  transition: all 0.3s;
-  cursor: pointer;
-  margin: 1rem;
-}
-.detail-page-btn:hover {
-  /* background-color: #eb4015; */
-  background-image: linear-gradient(
-    to right,
-    rgb(250, 52, 2),
-    hsl(34, 100%, 52%)
-  );
-  color: #ffffff;
-}
-
 .page-btn {
   /* display: flex; */
   /* justify-content: center; */
@@ -197,7 +163,7 @@ body {
 }
 
 .genre-tags {
-  margin-left: 50%;
+  margin-left: 40%;
   margin-top: -6%;
 }
 
@@ -215,28 +181,75 @@ body {
   text-align: center;
   /* font-size: 28px; */
   padding: 10px;
-  /* width: 200px; */
-  transition: 0.5s ease-in-out;
+  width: 6rem;
+  /* transition: 0.5s ease-in-out; */
   cursor: pointer;
   margin: 1rem;
 }
-.tags:focus {
-  /* background-color: #e23a0f; */
+
+.selectedTag {
   background-image: linear-gradient(
     to right,
     rgb(250, 52, 2),
-    rgb(255, 102, 0)
+    rgb(243, 124, 12)
   );
-
-  /* transform: scale(1.1); */
-  /* transition: 0.5s ease; */
+  width: 6rem;
+  border-radius: 3rem;
+  background-color: transparent;
+  border-style: solid;
+  border-color: #f4511e;
+  color: #ffffff;
+  padding: 10px;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  margin: 1rem;
+  box-shadow: 2px 3px 6px hsl(0, 3%, 7%);
 }
 
 .row {
   display: flex;
-  margin: 4%;
-  padding: 20px;
+  margin: 3%;
+  padding: 1rem;
 }
 .column {
   flex: 50%;
+}
+
+.detail-btns {
+  position: absolute;
+  margin-top: 30%;
+  margin-left: 60%;
+  z-index: 10;
+}
+.detail-page-btn {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  display: inline-block;
+  border-radius: 20rem;
+  background-color: transparent;
+  border-style: solid;
+  border-color: #e96021;
+  color: #f4511e;
+  text-align: center;
+  width: 8rem;
+  padding: 10px;
+
+  transition: all 0.3s;
+  cursor: pointer;
+  margin: 1rem;
+}
+.detail-page-btn:hover {
+  /* background-color: #eb4015; */
+  background-image: linear-gradient(
+    to right,
+    rgb(250, 52, 2),
+    hsl(34, 100%, 52%)
+  );
+  color: #ffffff;
+}
+
+.column h6 {
+  font-size: clamp(1rem, 1vw, 1rem);
 }

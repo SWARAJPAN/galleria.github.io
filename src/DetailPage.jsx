@@ -87,14 +87,14 @@ function DetailPage() {
             <h3>Rating: {detail.vote_average}</h3>
             <h4>Released on: {detail.release_date}</h4>
             <h6>Overview: {detail.overview}</h6>
-            <div className='detail-btns'>
-              <button className='detail-page-btn' onClick={prevFunct}>
-                prev
-              </button>
-              <button className='detail-page-btn' onClick={nextFunct}>
-                next
-              </button>
-            </div>
+          </div>
+          <div className='detail-btns'>
+            <button className='detail-page-btn' onClick={prevFunct}>
+              prev
+            </button>
+            <button className='detail-page-btn' onClick={nextFunct}>
+              next
+            </button>
           </div>
         </div>
       </div>

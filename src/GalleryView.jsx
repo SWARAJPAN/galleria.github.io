@@ -17,7 +17,7 @@ export default function App() {
   const [pageNum, setPageNum] = useState(1);
   // const [data, setData] = useState("");
 
-  const location = useLocation();
+  // const location = useLocation();
 
   // console.log(location.state.svalue);
   // setData((item) => location, state.svalue);

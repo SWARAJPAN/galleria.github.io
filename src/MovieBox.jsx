@@ -5,15 +5,10 @@ import { NavLink } from "react-router-dom";
 
 const API_IMG = "https://image.tmdb.org/t/p/w500/";
 
-const MovieBox = ({
-  id,
-  genre_ids,
-  title,
-  poster_path,
-  vote_average,
-  release_date,
-  overview,
-}) => {
+const MovieBox = (
+  { id, genre_ids, title, poster_path, vote_average, release_date, overview },
+  pageNum
+) => {
   return (
     <NavLink to={`/details/${id}`}>
       <div className='card '>
