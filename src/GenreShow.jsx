@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import { NavLink } from "react-router-dom";
+import MovieBox from "./MovieBox";
 import { ConstructionOutlined } from "@mui/icons-material";
 // import MovieBox from "./MovieBox";
 
@@ -78,7 +80,7 @@ function Movie() {
     <div className='container'>
       <div>
         <button className='page-btn' onClick={pagePrev}>
-          <span>previous</span>
+          <span>prev</span>
         </button>
         <button className='page-btn' onClick={pageNext}>
           <span>next</span>
@@ -174,14 +176,20 @@ function Movie() {
           .map((item) => {
             return (
               <div>
-                <div className='card'>
-                  {/* <h1>{item.title}</h1> */}
-                  <img
-                    className='movies-image'
-                    src={API_IMG + item.poster_path}
-                  />
-                  {/* item.genre_ids was giving a array, JSON converted array into string, and parseInt converted string into int */}
-                </div>
+                <NavLink
+                  to={`/details/${item.id}`}
+                  onClick={`/details/${pageNum}`}
+                >
+                  <div className='card'>
+                    {/* <h1>{item.title}</h1> */}
+                    <img
+                      className='movies-image'
+                      src={API_IMG + item.poster_path}
+                    />
+
+                    {/* item.genre_ids was giving a array, JSON converted array into string, and parseInt converted string into int */}
+                  </div>
+                </NavLink>
               </div>
             );
           })}
