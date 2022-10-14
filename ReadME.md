@@ -1,6 +1,6 @@
 Website Link:
 
-https://moviegalleria.netlify.app/
+https://movie-galleria.netlify.app/
 
 
 
